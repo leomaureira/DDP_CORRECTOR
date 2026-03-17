@@ -133,8 +133,8 @@ function processFile() {
             });
 
             const timmedData = jsonData.map(row => row.slice(1))
-            const headers = jsonData[12];
-            const dataRows = jsonData.slice(13, -1);
+            const headers = timmedData[12];
+            const dataRows = timmedData.slice(13, -1);
 
             const df = dataRows.map(row => {
                 const obj = {};
@@ -149,7 +149,7 @@ function processFile() {
 
             // 🔍 EXPORTAR DATAFRAME PARA DEBUG
             // Descomentá esta línea si querés ver el DataFrame original:
-            exportDataFrameForDebug(df);
+            //exportDataFrameForDebug(df);
 
             // Aplicar filtros
             const results = applyFilters(df);
